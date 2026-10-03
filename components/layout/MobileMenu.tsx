@@ -14,11 +14,11 @@ const NavLinks = [
   "Home",
   "World",
   "Politics",
-  "Business",
+  "Economy",
   "Technology",
-  "Science",
-  "Culture",
+  "Health",
   "Sports",
+  "Video",
 ];
 
 const getHref = (navItem: string) =>

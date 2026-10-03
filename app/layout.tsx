@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Newsreader, Inter, Noto_Serif_Bengali } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/Header";
+import Footer from "@/components/layout/Footer";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -31,6 +32,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body className="min-h-full flex flex-col">
         <Header />
         <main>{children}</main>
+        <Footer />
       </body>
     </html>
   );
