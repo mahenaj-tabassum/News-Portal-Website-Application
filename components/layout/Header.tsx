@@ -29,7 +29,8 @@ const Header = () => {
   const date = new Date().toLocaleDateString("bn-BD", { dateStyle: "full" });
 
   useEffect(() => {
-    const f = () => setScrolled(window.scrollY > 24);
+    const f = () =>
+      setScrolled((prev) => (prev ? window.scrollY > 8 : window.scrollY > 48));
     f();
     window.addEventListener("scroll", f, { passive: true });
     return () => window.removeEventListener("scroll", f);
@@ -48,7 +49,7 @@ const Header = () => {
       <header
         className={`
             ${scrolled ? "bg-paper/80 backdrop-blur-md" : "bg-paper"} 
-            sticky top-0 z-50 border-b border-line transition-[background-color, backdrop-filter] duration-300 md:border-b-0
+            sticky top-0 z-50 border-b border-line transition-[background-color,backdrop-filter] duration-300 md:border-b-0
         `}
       >
         <div className="max-w-7xl mx-auto px-5 md:px-8">

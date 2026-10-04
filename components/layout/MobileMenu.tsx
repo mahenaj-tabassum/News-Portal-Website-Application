@@ -82,17 +82,15 @@ const MobileMenu = ({ open, setOpen, pathname }: MobileMenuProps) => {
 
       {/* Navigation */}
       <ul className="flex-1 overflow-y-auto py-2">
-        {NavLinks.map((navItem, idx) => (
+        {NavLinks.map((navItem) => (
           <li
             key={navItem}
             style={{
-              transitionDelay: open ? `${60 + idx * 25}ms` : "0ms",
+              transitionDelay: open ? `${60 + NavLinks.length * 25}ms` : "0ms",
             }}
-            className={`
-              border-b border-line
-              transition-all duration-300
-              ${open ? "translate-y-0 opacity-100" : "translate-y-2 opacity-0"}
-            `}
+            className={`pb-[max(1.5rem,env(safe-area-inset-bottom))] pt-5 transition-all duration-300 ${
+              open ? "translate-y-0 opacity-100" : "translate-y-2 opacity-0"
+            }`}
           >
             <Link
               href={getHref(navItem)}
