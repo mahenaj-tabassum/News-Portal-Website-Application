@@ -27,6 +27,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
+      data-theme="light"
       className={`${newsReader.variable} ${inter.variable} ${notoSerif_Bengali.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
