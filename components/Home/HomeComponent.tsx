@@ -10,7 +10,6 @@ const HomeComponent = async () => {
   const mainNews = sections[0].articles;
   const otherSections = sections.slice(1);
   const filtered = otherSections.filter((item: NewsSectionProps) => {
-    console.log(item);
     return (
       item.title !== "বিবিসি বাংলা এখন হোয়াটসঅ্যাপে!" &&
       item.title !== "বিবিসি বাংলা এখন ইন্সটাগ্রামে!" &&

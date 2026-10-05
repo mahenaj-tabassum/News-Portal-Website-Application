@@ -5,15 +5,16 @@ import { useState } from "react";
 import { BsGoogle } from "react-icons/bs";
 import { FaGithub } from "react-icons/fa";
 import { toast } from "react-toastify";
+import { useRouter } from "next/navigation";
 
 export default function AuthForm({ mode }: { mode: "in" | "up" }) {
   const up = mode === "up";
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [image, setImage] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const router = useRouter();
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -27,7 +28,6 @@ export default function AuthForm({ mode }: { mode: "in" | "up" }) {
           name,
           email,
           password,
-          image: image || undefined,
           callbackURL: "/",
         });
         if (error) {
@@ -36,6 +36,8 @@ export default function AuthForm({ mode }: { mode: "in" | "up" }) {
         }
         // Sign Up Successful
         toast.success("Account created successfully! 🎉");
+        router.push("/");
+        router.refresh();
       } else {
         // SIGN IN
         const { error } = await signIn.email({
@@ -49,6 +51,8 @@ export default function AuthForm({ mode }: { mode: "in" | "up" }) {
         }
         // Sign Successful
         toast.success("Signed in successfully! 👋");
+        router.push("/");
+        router.refresh();
       }
     } catch (e) {
       console.error(e);
@@ -80,18 +84,6 @@ export default function AuthForm({ mode }: { mode: "in" | "up" }) {
                   onChange={(e) => setName(e.target.value)}
                   className="mt-2 w-full border-b border-ink/30 bg-transparent py-3 text-base font-normal normal-case tracking-normal text-ink outline-none transition-colors focus:border-accent"
                   required
-                  placeholder="Enter Your Name"
-                />
-              </label>
-
-              <label className="label block text-muted">
-                Image
-                <input
-                  type="url"
-                  value={image}
-                  onChange={(e) => setImage(e.target.value)}
-                  className="mt-2 w-full border-b border-ink/30 bg-transparent py-3 text-base font-normal normal-case tracking-normal text-ink outline-none transition-colors focus:border-accent"
-                  placeholder="Enter Image URL"
                 />
               </label>
             </>
@@ -105,7 +97,6 @@ export default function AuthForm({ mode }: { mode: "in" | "up" }) {
               onChange={(e) => setEmail(e.target.value)}
               className="mt-2 w-full border-b border-ink/30 bg-transparent py-3 text-base font-normal normal-case tracking-normal text-ink outline-none transition-colors focus:border-accent"
               required
-              placeholder="Enter Your Email"
             />
           </label>
 
@@ -117,7 +108,6 @@ export default function AuthForm({ mode }: { mode: "in" | "up" }) {
               onChange={(e) => setPassword(e.target.value)}
               className="mt-2 w-full border-b border-ink/30 bg-transparent py-3 text-base font-normal normal-case tracking-normal text-ink outline-none transition-colors focus:border-accent"
               required
-              placeholder="Enter Password"
             />
           </label>
 
