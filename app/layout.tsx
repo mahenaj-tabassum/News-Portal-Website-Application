@@ -3,6 +3,7 @@ import { Newsreader, Inter, Noto_Serif_Bengali } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import { ToastContainer } from "react-toastify";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -34,6 +35,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <Header />
         <main>{children}</main>
         <Footer />
+
+        <ToastContainer position="top-right"/>
       </body>
     </html>
   );
