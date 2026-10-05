@@ -40,7 +40,7 @@ const MostReadNews = async () => {
               </span>
 
               <div className="min-w-0">
-                <h3 className="h-serif text-[14px] text-balance font-semibold !leading-snug">
+                <h3 className="h-serif text-[14px] text-balance font-semibold leading-snug!">
                   <span className="ul  group-hover:bg-size-[100%_1px]">
                     {item.title}
                   </span>
