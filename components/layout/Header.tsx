@@ -108,7 +108,7 @@ const Header = () => {
                 News · Ideas · Perspectives
               </p>
             </div>
-            <div>
+            <div className="hidden md:block">
               {user ? (
                 <div className="flex items-center gap-2 rounded-full border border-black/10 bg-white/70 py-1 pl-1 pr-1.5 shadow-sm backdrop-blur transition-shadow duration-200 hover:shadow-md">
                   {/* User Image */}
@@ -172,13 +172,7 @@ const Header = () => {
               )}
             </div>
 
-            <div className="-mr-2 flex items-center  md:hidden">
-              <button
-                aria-label="Search stories"
-                className="p-2.5 cursor-pointer"
-              >
-                <Search />
-              </button>
+            <div className="-mr-2 md:hidden">
               <button
                 aria-label="Open menu"
                 aria-expanded={open}
