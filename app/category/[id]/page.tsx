@@ -11,7 +11,7 @@ const CategoryNews = async ({
   const res = await fetch(`https://news-api-v2.vercel.app/api/category/${id}`);
   const json = await res.json();
   const data = json.data;
-  if(!data) notFound()
+  if (!data) notFound();
   console.log(data);
 
   return (
@@ -26,7 +26,7 @@ const CategoryNews = async ({
 
         <hr className="hidden flex-1 border-t border-line sm:block" />
       </div>
-      <div className="grid md:grid-cols-3 sm: grid-cols-2 gap-7">
+      <div className="grid md:grid-cols-3 sm: grid-cols-1 sm:grid-cols-2 gap-7">
         {data.map((article: NewsProps) => (
           <NewsCard key={article.id} article={article} />
         ))}

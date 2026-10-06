@@ -25,7 +25,7 @@ const NewsSection = ({ news }: Props) => {
 
           {/* News of this section */}
           <div className="mt-6 border-b border-line pb-8">
-            <div className="grid gap-x-6 gap-y-10 grid-cols-2">
+            <div className="grid gap-x-6 gap-y-10 md:grid-cols-2">
               {item.articles.map((article) => (
                 <NewsCard key={article.id} article={article} />
               ))}

@@ -131,10 +131,10 @@ const MobileMenu = ({ open, setOpen, pathname }: MobileMenuProps) => {
           <div>
             {user ? (
               <div className="flex justify-end">
-                <div className="flex w-[40%] justify-center items-center gap-2 rounded-full border border-black/10 bg-white/70 py-1 pl-1 pr-1.5 shadow-sm backdrop-blur transition-shadow duration-200 hover:shadow-md">
+                <div className="flex w-[60%] lg:w-[40%] justify-center items-center gap-2 rounded-full border border-black/10 bg-white/70 py-1 pl-1 pr-1.5 shadow-sm backdrop-blur transition-shadow duration-200 hover:shadow-md">
                   {/* User Image */}
                   <div className="flex items-center gap-2.5">
-                    <Link href={"/profile"}>
+                    <Link onClick={closeMenu} href={"/profile"}>
                       <div className="flex size-9 items-center justify-center rounded-full bg-linear-to-br from-accent to-[#5a82ff] text-sm font-semibold uppercase text-white ring-2 ring-white">
                         {firstName?.charAt(0).toUpperCase()}
                       </div>

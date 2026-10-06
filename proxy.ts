@@ -16,5 +16,5 @@ export async function proxy(request: NextRequest) {
 }
 export const config = {
   // Which page to protect
-  matcher: ["/profile", '/news/:path*'],
+  matcher: ["/profile", '/article/:path*'],
 };

@@ -92,8 +92,8 @@ export default function AuthForm({ mode }: { mode: "in" | "up" }) {
     "w-full cursor-pointer border border-line bg-white py-3.5 text-sm font-medium transition-colors hover:border-accent rounded disabled:cursor-not-allowed disabled:opacity-60";
 
   return (
-    <main className="grid my-20 min-h-screen">
-      <div className="mx-auto border border-line bg-white flex w-full max-w-lg flex-col justify-center px-10 py-16">
+    <main className="grid my-20 min-h-screen px-5">
+      <div className="mx-auto border border-line  bg-white flex w-full max-w-lg flex-col justify-center px-10 py-16">
         <h1 className="h-serif text-5xl">
           {up ? "Join the conversation." : "Welcome back."}
         </h1>

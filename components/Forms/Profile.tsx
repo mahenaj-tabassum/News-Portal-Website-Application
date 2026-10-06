@@ -78,8 +78,8 @@ const Profile = () => {
 
         <div className="px-6 pb-8 sm:px-10">
           {/* Avatar + identity */}
-          <div className="-mt-12 flex items-end gap-4">
-            {user.image ? (
+          <div className="-mt-12 flex flex-col lg:flex-row lg:items-end gap-4">
+            {user.image === "undefined" ? (
               // eslint-disable-next-line @next/next/no-img-element
               <img
                 src={user.image}
