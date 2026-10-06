@@ -134,9 +134,11 @@ const MobileMenu = ({ open, setOpen, pathname }: MobileMenuProps) => {
                 <div className="flex w-[40%] justify-center items-center gap-2 rounded-full border border-black/10 bg-white/70 py-1 pl-1 pr-1.5 shadow-sm backdrop-blur transition-shadow duration-200 hover:shadow-md">
                   {/* User Image */}
                   <div className="flex items-center gap-2.5">
-                    <div className="flex size-9 items-center justify-center rounded-full bg-linear-to-br from-accent to-[#5a82ff] text-sm font-semibold uppercase text-white ring-2 ring-white">
-                      {firstName?.charAt(0).toUpperCase()}
-                    </div>
+                    <Link href={"/profile"}>
+                      <div className="flex size-9 items-center justify-center rounded-full bg-linear-to-br from-accent to-[#5a82ff] text-sm font-semibold uppercase text-white ring-2 ring-white">
+                        {firstName?.charAt(0).toUpperCase()}
+                      </div>
+                    </Link>
 
                     {/* First Name */}
                     <span className="hidden text-sm font-medium text-ink sm:inline">
